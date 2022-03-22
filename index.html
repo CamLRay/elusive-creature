@@ -11,16 +11,20 @@
   <h1>Catch the Elusive Creature</h1>
   <div class="container">
     <div class="row">
-      <div class="col-6">
-        <p>Try and catch the elusive creature <span id="start">click here</span> to begin.</p>
+      <div class="col-2"></div>
+      <div class="col-3">
+        <button class="btn btn-success border-warning btn-lg" id="start">Chase the Creature!</button>
       </div>
       <div class="col-1">
         <h5>Difficulty:</h5>
       </div>
-      <div class="col-5">
+      <div class="col-3">
         <button class="btn btn-success" id="easy">Easy</button>
         <button class="btn btn-primary" id="normal">Normal</button>
         <button class="btn btn-danger" id="hard">Hard</button>
+      </div>
+      <div class="col-3">
+        <h5>Creatures Captured: <span id="score">0</span></h5>
       </div>
     </div>
     <img src="img/elusive.png" class="hidden" id="free">
