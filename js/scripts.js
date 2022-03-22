@@ -25,8 +25,11 @@ $(document).ready(function() {
   });
 
   $("img#free").mouseenter(function() {
-    let height = Math.floor(Math.random() * ($(window).height() - $(this).height()));
-    let width = Math.floor(Math.random() * ($(window).width() - $(this).width()));
+    // let height = Math.floor(Math.random() * ($(window).height() - $(this).height() + padding));
+    // let width = Math.floor(Math.random() * ($(window).width() - $(this).width() + padding));
+
+    let height = getNewCoordinate($(window).height(), $(this).height() + padding, $(this).position().top);
+    let width = getNewCoordinate($(window).width(), $(this).width() + padding, $(this).position().left);
 
     $(this).animate({
       top: height,
@@ -50,4 +53,17 @@ function setDifficulty(padding, speed) {
   $("img#free").css("padding", padding + "px");
   let sound = new Audio("audio/click.wav");
   sound.play();
+}
+
+function getNewCoordinate(windowDimension, imageDimension, prevCoordinate) {
+  let newCoordinate = prevCoordinate;
+  while (Math.abs(newCoordinate - prevCoordinate) < 100) {
+    newCoordinate = Math.floor(Math.random() * (windowDimension - imageDimension));
+  }
+
+  return newCoordinate;
+}
+
+Number.prototype.clamp = function(min, max) {
+  return Math.min(Math.max(this, min), max);
 }
