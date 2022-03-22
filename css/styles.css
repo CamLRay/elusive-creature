@@ -1,0 +1,19 @@
+h1 {
+  text-align: center;
+}
+img {
+  width:10vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#start:hover {
+  color: green;
+  text-decoration: underline;
+}
+
