@@ -1,15 +1,24 @@
+body {
+  background-color: rgb(212, 212, 212);
+}
+
 h1 {
   text-align: center;
 }
-img {
-  width:10vw;
+
+#free {
+  transform: scale(.5);
   position: absolute;
-  bottom: 0;
-  right: 0;
+}
+
+#caught {
+  transform: scale(.5);
+  display: block;
+  margin: auto;
 }
 
 .hidden {
-  display: none;
+  width: 0;
 }
 
 #start:hover {
